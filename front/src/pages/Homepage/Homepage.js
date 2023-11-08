@@ -3,7 +3,7 @@ import styles from "./Homepage.module.scss";
 import Serie from "./components/Serie";
 // import { series } from "../../data";
 import { useEffect, useState } from "react";
-
+import { getSeries } from "../../apis/series"
 export default function Homepage() {
   const [filter, setFilter] = useState("");
   const [series, setSeries] = useState([]);
@@ -12,16 +12,16 @@ export default function Homepage() {
   useEffect(() => {
     async function fetchSeries() {
       try {
-        const response = await fetch(
-          "http://localhost:8000/api/series/getSeries"
-        );
-        if (response.ok) {
-          const seriesFromBack = await response.json();
-          const modifiedSeries = seriesFromBack.map((s) =>
+        const response = await getSeries()
+        console.log("response: ", response);
+        if (response) {
+          const modifiedSeries = response.map((s) =>
             s.like === 1 ? { ...s, like: true } : { ...s, like: false }
           );
           setIsLoading(false);
           setSeries(modifiedSeries);
+        } else{
+          console.log("error fetch series");
         }
       } catch (error) {
         console.error(error);
