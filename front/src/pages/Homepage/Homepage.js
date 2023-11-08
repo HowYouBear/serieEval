@@ -1,7 +1,6 @@
 import Loading from "../../components/Loading/Loading";
 import styles from "./Homepage.module.scss";
 import Serie from "./components/Serie";
-// import { series } from "../../data";
 import { useEffect, useState } from "react";
 import { getSeries } from "../../apis/series"
 export default function Homepage() {

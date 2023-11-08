@@ -6,20 +6,26 @@ Modifier et insérer la nouvelle base de données
 
 _______________________________
 Côté front
+
 A la base du dossier src
 Créer un dossier apis qui regroupe dans 2 fichiers les requêtes séries et utilisateurs
 Créer un dossier loader avec 2 fichiers qui contiennent les fonctions qui retourne les
 données nécessaires
+
 Instaurer un système de routing (avec lazy loading) dans un fichier router.js et utiliser les
 loaders
 Le routing doit contenir des routes Login, Register, Homepage, Profile, Admin, Détails
+
 Intégrer une page d'erreur
+
 Le formulaire d'inscription est similaire au projet avec l'upload d'avatar (username, email,
 password (avec vérification), et un avatar (optionnel comme dans le cours)). Les booléens
 admin et verify sont par défaut à 0 (pas de champs de saisie).
+
 Modifiez directement dans PHPMyAdmin le premier utilisateur (vous) pour vous donner le
 rôle d'administrateur.
 En se connectant avec cet utilisateur-admin un lien admin apparait dans le header.
+
 L'espace admin comprend un nouveau menu proposant d'ajouter une série (avec les
 champs titre, poster, année de sortie, le résumé, si la série est toujours en cours, le pays
 originaire et les notes des sites imdB et Sens Critique, tous obligatoires).Y insérer une
@@ -27,19 +33,23 @@ dizaine de séries.
 Le menu de l'espace admin propose aussi de visionner la liste des séries avec un bouton
 pour supprimer la série ou la modifier, ce dernier cas renvoie vers un formulaire pré rempli
 que vous pouvez modifier et valider.
+
 Lorsque personne n'est connecté, le header affiche login et register et on ne peut pas liker
 la série (icone cœur non visible).
 Lorsqu'un utilisateur est connecté le header affiche logout (fonctionnel), favorites qui
 affiche vos séries préférées et profile, qui propose un menu settings (vos données email,
 pseudo et avatar que vous pouvez modifier), vos séries à voir (wishlist) que l'on peut
 désactiver (une série), vos séries en cours que vous pouvez acter comme terminé.
+
 En cliquant sur une série, on arrive sur sa page Détails (voir la capture d'écran).
 Vous y ajoutez le composant Rating et vous pouvez noter la série sur 10 si vous êtes
 connecté, l'ajouter à votre wishlist et la mettre dans vos séries en cours. Vous y affichez
 aussi la moyenne de la note des utilisateurs de notre blog.
 Vous pouvez y ajouter un commentaire. Ils sont visibles dans tous les cas dans la page
 Détails.
+
 Les sous menus générant des pages sont à gérer comme routes enfants dans le router.
+
 IMPORTANT : Le design, la fonctionnalité, les commentaires, l'expérience utilisateur
 (feedbacks, confirmation de modification ou suppression etc...), l'externalisation de
 composants réutilisables (certains formulaires par exemple), la sécurité (les formulaires,
@@ -47,13 +57,19 @@ les routes Admin et Profile à protéger)
 
 _______________________________
 Côté back
+
 Bien architecturer le projet avec des dossiers database routes et des dossiers différents
 pour les avatars et les posters de série.
+
 Utiliser le try catch pour les actions asynchrones (dans le front aussi).
+
 Réaliser une gestion d'erreur si le fichier n'est pas de type image, ou de trop grandes tailles
 sans faire crasher le serveur avec feedback dans le front
+
 Dans un fichier texte une fois l'évaluation terminé, indiquez les difficultés rencontrées, les
 améliorations que vous apporteriez
+
+_______________________________
 BONUS : en pratiquant une veille technologique, ajouter mot de passe oublié dans login,
 modification de mot de passe depuis votre profil (ancien mot de passe, nouveau mot de
 passe et confirmation du nouveau), validation de l'inscription par email.
