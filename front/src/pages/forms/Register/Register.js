@@ -37,11 +37,11 @@ export default function Register({ changeView }) {
   });
 
   const defaultValues = {
-    username: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-    cgu: false,
+    username: "azer",
+    email: "test@mail",
+    password: "azerty",
+    confirmPassword: "azerty",
+    cgu: true,
     avatar: "",
   };
 

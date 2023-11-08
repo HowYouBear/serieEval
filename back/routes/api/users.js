@@ -40,7 +40,7 @@ router.post("/register", upload.single("avatar"), async (req, res) => {
       if (result.length) {
         let isEmail = { message: "Email existant" };
         if (avatar) {
-          const filePath = path.join(__dirname, "/upload", avatar);
+          const filePath = path.join(__dirname, "../../../upload/avatar", avatar);
           fs.unlink(filePath, (err) => {
             if (err) {
               console.log("Erreur suppression fichier");

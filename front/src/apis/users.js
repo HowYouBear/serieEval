@@ -1,7 +1,7 @@
 export async function signin(credentials) {
   console.log(credentials);
   try {
-    const response = await fetch("http://localhost:8000/login", {
+    const response = await fetch("http://localhost:8000/api/users/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -25,7 +25,7 @@ export async function signin(credentials) {
 
 export async function signup(values) {
   try {
-    const response = await fetch("http://localhost:8000/register", {
+    const response = await fetch("http://localhost:8000/api/users/register", {
       method: "POST",
       body: values,
     });
