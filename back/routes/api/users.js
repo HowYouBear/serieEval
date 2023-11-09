@@ -8,7 +8,7 @@ const fs = require("fs");
 const upload = multer({
     storage: multer.diskStorage({
       destination: (req, file, cb) => {
-        cb(null, path.join(__dirname, "/upload"));
+        cb(null, path.join(__dirname, "../../upload/avatar"));
       },
       filename: (req, file, cb) => {
         cb(null, Date.now() + "-" + file.originalname);
@@ -40,7 +40,7 @@ router.post("/register", upload.single("avatar"), async (req, res) => {
       if (result.length) {
         let isEmail = { message: "Email existant" };
         if (avatar) {
-          const filePath = path.join(__dirname, "../../../upload/avatar", avatar);
+          const filePath = path.join(__dirname, "../../upload/avatar", avatar);
           fs.unlink(filePath, (err) => {
             if (err) {
               console.log("Erreur suppression fichier");
@@ -52,7 +52,7 @@ router.post("/register", upload.single("avatar"), async (req, res) => {
         res.status(200).json(isEmail);
       } else {
         const sqlInsert =
-          "INSERT INTO users (username, email, password, avatar) VALUES (?, ?, ?, ?)";
+          "INSERT INTO users (pseudo, email, password, avatar) VALUES (?, ?, ?, ?)";
         connection.query(
           sqlInsert,
           [username, email, hashedPassword, avatar],
