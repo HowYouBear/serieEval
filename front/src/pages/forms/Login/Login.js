@@ -24,8 +24,8 @@ export default function Login() {
   });
 
   const defaultValues = {
-    email: "",
-    password: "",
+    email: "un@email",
+    password: "azerty",
   };
 
   const {

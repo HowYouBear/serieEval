@@ -7,11 +7,11 @@ export default function Profile() {
   console.log("profile", user);
 
   return (
-    <div className="flex-fill">
+    <div className={`d-flex flex-column align-items-center flex-fill`}>
       <h1>Profile</h1>
       {user && user.avatar ? (
         <div>
-          <img src={`http://localhost:8000/${user.avatar}`} alt="avatar" />
+          <img src={`http://localhost:8000/avatar/${user.avatar}`} alt="avatar" />
         </div>
       ) : (
         <div>

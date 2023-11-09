@@ -4,6 +4,7 @@ const bcrypt = require("bcrypt");
 const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
+const { log } = require("console");
 
 const upload = multer({
     storage: multer.diskStorage({
@@ -69,7 +70,7 @@ router.post("/register", upload.single("avatar"), async (req, res) => {
   });
   
 router.post("/login", async (req, res) =>{
-      console.log(req.body);
+      console.log("connection en cours avec les identifiants: ", req.body);
       let isEmail;
       const { email, password } = req.body;
       const sqlVerify = "SELECT * FROM `users` WHERE `email` =  ?";
@@ -79,7 +80,7 @@ router.post("/login", async (req, res) =>{
               const isPasswordValid = await bcrypt.compare(password, result[0].password);
               if(isPasswordValid){
                   isEmail = { messageGood: "Connexion réussite",
-                              id: result[0].id};
+                              id: result[0].idUser};
               } else{
                   isEmail = { message: "Connexion refuser"};
               }
@@ -91,11 +92,12 @@ router.post("/login", async (req, res) =>{
   })
   
 router.get("/getUser/:id", (req, res) => {
-      console.log(req.params);
+      console.log("get user:id: ", req.params);
       let id = req.params.id;
-      const sql = "SELECT username, email, avatar FROM users where id= ?";
+      const sql = "SELECT pseudo, email, avatar, admin FROM users where idUser= ?";
       connection.query(sql, [id], (err, result) => {
         if (err) throw err;
+        console.log("returb get user:id: ", result[0]);
         res.status(200).json(result[0]);
       });
     });

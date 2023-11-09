@@ -26,6 +26,13 @@ export default function Header() {
             <span>Profile</span>
           </button>
         </NavLink>
+        {user.admin ? (
+          <NavLink to="/administration" className={` tdn mr10 `}>
+          <button className="mr10 btn btn-primary">
+            <span>Admin</span>
+          </button>
+          </NavLink>
+        ) : ("")}
       </ul>  
       ) : (
         <ul>
@@ -41,6 +48,7 @@ export default function Header() {
           </NavLink>
         </ul>
       )}
+
     </header>
   );
 }
