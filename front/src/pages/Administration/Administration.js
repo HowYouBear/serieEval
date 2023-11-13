@@ -10,7 +10,7 @@ export default function administration () {
                         <li>Add a TV serie</li>
                     </NavLink>
                     <NavLink to="/administration/updateSerie" className={`mr10 tdn `}>
-                        <li>Serie list</li>
+                        <li>Update serie</li>
                     </NavLink>
                 </ul>
             </nav>

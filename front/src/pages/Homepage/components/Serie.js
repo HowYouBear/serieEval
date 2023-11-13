@@ -1,7 +1,11 @@
 import styles from "./Serie.module.scss";
+import { useContext } from "react";
+import { UserContext } from "../../../context/UserContext";
+
 
 export default function Serie({ serie, updateSeries, deleteSeries }) {
   const { id, title, image, like } = serie;
+  const { user, setUser } = useContext(UserContext);
 
   const handleClick = async () => {
     try {
@@ -52,7 +56,9 @@ export default function Serie({ serie, updateSeries, deleteSeries }) {
         className={`${styles.title} d-flex flex-column justify-content-center align-items-center`}
       >
         <h3 className="mb10">{title}</h3>
+        {user ? 
         <i className={`fas fa-heart ${like ? "text-liked" : ""}`}></i>
+        : ""}
       </div>
     </div>
   );

@@ -28,8 +28,12 @@ En se connectant avec cet utilisateur-admin un lien admin apparait dans le heade
 
 L'espace admin comprend un nouveau menu proposant d'ajouter une série (avec les
 champs titre, poster, année de sortie, le résumé, si la série est toujours en cours, le pays
-originaire et les notes des sites imdB et Sens Critique, tous obligatoires).Y insérer une
-dizaine de séries.
+originaire et les notes des sites imdB et Sens Critique, tous obligatoires).
+
+
+====> Y insérer une dizaine de séries.
+
+
 Le menu de l'espace admin propose aussi de visionner la liste des séries avec un bouton
 pour supprimer la série ou la modifier, ce dernier cas renvoie vers un formulaire pré rempli
 que vous pouvez modifier et valider.

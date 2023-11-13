@@ -31,4 +31,8 @@ router.delete("/deleteSeries/:id", (req, res) => {
   res.sendStatus(200);
 });
 
+router.post("/addSerie", (req, res) =>{
+  console.log("addSerie :", req.body);
+})
+
 module.exports = router;

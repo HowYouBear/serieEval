@@ -1,0 +1,24 @@
+.searchBar {
+  padding: 10px 15px;
+  border: 2px solid var(--gray-2);
+  border-radius: 20px;
+  input {
+    outline: 0;
+    border: 0;
+  }
+}
+
+.flex{
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  height: 500px;
+  border: 1px solid black;
+}
+
+.contentCard {
+  max-width: 1130px;
+  width: 100%;
+}
